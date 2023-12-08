@@ -5,6 +5,17 @@ export PATH := ./bin:${PATH}
 
 all: install slides
 
+# install OS deps
+os-install:
+	apt-get install -yq curl git wget build-essential;
+
+# install chrome (needed for html generation)
+chrome-install:
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -;\
+		echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+	apt-get update;
+	apt-get -y install google-chrome-stable
+
 pre-install:
 	hermit shell-hooks
 	hermit install
