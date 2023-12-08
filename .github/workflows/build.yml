@@ -19,7 +19,7 @@ jobs:
           make install;
       - name: build slides
         run: >
-          ./bin/activate-hermit;
+          . ./bin/activate-hermit;
           make slides;
       - uses: actions/upload-artifact@v3
         with:
