@@ -1,6 +1,6 @@
 # Slide Tools
 
-Build slides from markdown in html, pdf, and pptx formats. PlnatUML support too!
+Build slides from markdown in html, pdf, and pptx formats. Uses Marp to build slides and PlantUML support for diagrams.
 
 ## How to run
 
