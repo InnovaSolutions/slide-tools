@@ -1,6 +1,7 @@
 # Slide Tools
 
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/InnovaSolutions/slide-tools.git)
+
 Build slides from markdown in html, pdf, and pptx formats. Uses Marp to build slides and PlantUML support for diagrams.
 
 ## How to run
