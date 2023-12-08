@@ -1,0 +1,10 @@
+{
+  "name": "Slide Tools",
+  "build": {
+    "context": "..",
+    "dockerfile": "../Dockerfile",
+    "args": { "BASE_IMAGE": "mcr.microsoft.com/devcontainers/base:ubuntu", "USER": "vscode" }
+  },
+  "forwardPorts": [3333],
+  "overrideCommand": true
+}

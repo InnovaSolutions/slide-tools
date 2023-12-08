@@ -1,0 +1,8 @@
+/*.html
+/*.pdf
+/*.pptx
+/bin
+/.hermit
+/out
+node_modules
+* copy.*

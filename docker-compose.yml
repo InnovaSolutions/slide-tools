@@ -1,0 +1,6 @@
+version: "3"
+services:
+  slides:
+    build: .
+    volumes:
+      - ./out:/home/dev/work/out

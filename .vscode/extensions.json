@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"dotenv.dotenv-vscode",
+        "EditorConfig.EditorConfig",
+        "marp-team.marp-vscode",
+        "jebbs.plantuml",
+        "bradlc.vscode-tailwindcss"
+	]
+}

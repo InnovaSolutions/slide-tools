@@ -1,0 +1,22 @@
+{
+  "name": "slide-tools",
+  "version": "0.9.0",
+  "description": "Slide creation tools",
+  "author": "Roland Knight <roland.knight@innovasolutions.com>",
+  "repository": "https://gitlab.com/InnovaSolutions/slide-tools.git",
+  "license": "Proprietary",
+  "keywords": [
+    "typescript"
+  ],
+  "scripts": {
+    "docs": "npm run docs-ppt && npm run docs-html && npm run docs-pdf",
+    "docs-ppt": "marp --allow-local-files --html --pptx tech-talk.md -o out/tech-talk.pptx",
+    "docs-html": "marp --allow-local-files --html tech-talk.md -o out/tech-talk.html",
+    "docs-pdf": "marp --allow-local-files --html --pdf tech-talk.md -o out/tech-talk.pdf"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^2.5.0",
+    "@marp-team/marp-core": "^3.6.0",
+    "markdown-it-plantuml": "^1.4.1"
+  }
+}
