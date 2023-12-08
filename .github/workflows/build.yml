@@ -12,10 +12,17 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v3
+      - name: install
+        run: >
+          sudo ./os-install.sh;
+          make pre-install;
+          make install;
       - name: build slides
-        run: make slides-docker
+        run: >
+          . ./bin/activate-hermit;
+          make slides;
       - uses: actions/upload-artifact@v3
         with:
           name: slides
-          path: ${{ github.workspace }}/out/
+          path: ./out/
           if-no-files-found: error
