@@ -17,4 +17,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: slides
-          path: out/
+          path: ./out/
+          if-no-files-found: error
