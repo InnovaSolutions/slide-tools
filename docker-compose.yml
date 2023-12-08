@@ -3,4 +3,4 @@ services:
   slides:
     build: .
     volumes:
-      - ./out:/home/dev/work/out
+      - ./out:/home/dev/work/out:Z
