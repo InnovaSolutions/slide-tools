@@ -2,5 +2,6 @@ version: "3"
 services:
   slides:
     build: .
+    init: true
     volumes:
       - ./out:/home/dev/work/out:Z

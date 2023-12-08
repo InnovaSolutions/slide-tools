@@ -15,8 +15,8 @@
     "docs-pdf": "marp --allow-local-files --html --pdf tech-talk.md -o out/tech-talk.pdf"
   },
   "devDependencies": {
-    "@marp-team/marp-cli": "^2.5.0",
-    "@marp-team/marp-core": "^3.6.0",
+    "@marp-team/marp-cli": "^3.4.0",
+    "@marp-team/marp-core": "^3.9.0",
     "markdown-it-plantuml": "^1.4.1"
   }
 }

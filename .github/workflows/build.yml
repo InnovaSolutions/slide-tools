@@ -8,13 +8,12 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: checkout code
         uses: actions/checkout@v3
       - name: install
         run: >
-          sudo ./os-install.sh;
           make pre-install;
           make install;
       - name: build slides
@@ -26,3 +25,5 @@ jobs:
           name: slides
           path: ./out/
           if-no-files-found: error
+      - name: build container
+        run: docker build .
