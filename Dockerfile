@@ -2,7 +2,7 @@
 ARG BASE_IMAGE=ubuntu:22.04
 FROM ${BASE_IMAGE}
 
-ARG USER=dev
+ARG USER=root
 ARG PYTHON_VERSION=3.11
 
 WORKDIR /work
@@ -24,7 +24,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 RUN apt-get update;\
   apt-get -y install google-chrome-stable
 
-# run as non-root user
+# run as non-root user (potentially!)
 RUN id -u ${USER} &>/dev/null || useradd -ms /bin/bash ${USER}
 USER ${USER}
 WORKDIR /home/${USER}/work
