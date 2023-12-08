@@ -15,14 +15,8 @@ RUN apt-get update;\
   dpkg-reconfigure -f noninteractive tzdata;
 
 # install OS deps
-RUN apt-get install -yq curl git wget;\
-  apt-get install -yq build-essential;
-
-# install chrome (needed for html generation)
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -;\
-  echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
-RUN apt-get update;\
-  apt-get -y install google-chrome-stable
+COPY os-install.sh ./
+RUN ./os-install.sh
 
 # run as non-root user (potentially!)
 RUN id -u ${USER} &>/dev/null || useradd -ms /bin/bash ${USER}
@@ -35,6 +29,10 @@ COPY --chown=${USER}:${USER} *.js *.json ./
 COPY --chown=${USER}:${USER} Makefile ./
 RUN make pre-install;
 RUN make install;
+# install chrome (needed for pdf/pptx generation)
+RUN . ./bin/activate-hermit;\
+  npx @puppeteer/browsers install chrome@116.0.5793.0
+ENV CHROME_PATH=/home/${USER}/work/chrome/linux-116.0.5793.0/chrome-linux64/chrome
 
 # copy slide source
 COPY --chown=${USER}:${USER} assets/ assets/
