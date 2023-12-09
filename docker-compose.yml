@@ -4,4 +4,6 @@ services:
     build: .
     init: true
     volumes:
-      - ./out:/home/dev/work/out:Z
+      - ./out:/home/root/work/out
+      - ./slides.md:/home/root/work/slides.md
+      - ./assets:/home/root/work/assets
